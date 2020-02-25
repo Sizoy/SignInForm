@@ -1,0 +1,142 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #e5eeee;
+}
+
+.form {
+    width: 400px;
+    height: 500px;
+    background-image: url(img/bg.png);
+    background-size: cover;
+    box-shadow: 0px 24px 36px -12px rgba(0,0,0,1);
+    padding: 50px 70px;
+    position: relative;
+}
+/*------NAVIGATION-------*/
+.navigation {
+    position: absolute;
+    top: 50px;
+}
+.navigation__link {
+    font-family: "Quicksand", sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: #ddbcef;
+    text-decoration: none;
+}
+
+.navigation__link--active {
+    border-bottom: 2px solid #e66a64;
+    padding-bottom: 2px;
+    margin-right: 20px;
+    color: #fbf6e4;
+}
+
+/*--------FIELDS---------*/
+.fields {
+    position: absolute;
+    top: 120px;
+}
+
+.fields__field, .fields__submit{
+    font-family: "Quicksand", sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: #ddbcef;
+}
+.fields__field + input {
+    height: 40px;
+    width: 260px;
+    background-color: rgba(0,0,0,0);
+    border: 2px solid #9983c6;
+    margin-top: 10px;
+    font-family: "Quicksand", sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: #fbf6e4;
+    outline: none;
+}
+input:focus{
+    border: 2px solid #fbf6e4;
+}
+
+.fields__error {
+    visibility: hidden;
+    font-family: "Quicksand", sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    color: red;
+}
+
+input:invalid + .fields__error {
+    visibility: visible;
+}
+
+/*-------FORM CHECKBOX---------*/
+[type=checkbox] {
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    position: absolute;
+    opacity: 0;
+}
+
+.fields__field--checkbox {
+    display: flex;
+    align-items: center;
+}
+
+[type=checkbox]:checked + .fields__field .fields__checkbox {
+    font-size: 12px;
+}
+.fields__checkbox {
+    width: 16px;
+    height: 16px;
+    background-color: #23ae92;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 7px;
+    font-size: 0;
+    border: 2px solid #23ae92;
+    transition: ease .2s font-size;
+}
+
+.fields__field + [type=submit] {
+    height: 44px;
+    width: 262px;
+    background-color: #23ae92;
+    border: none;
+    margin-top: 50px;
+    font-family: "Quicksand", sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: #fbf6e4;
+}
+.fields__field + [type=submit]:focus {
+    border: 2px solid #9983c6;
+}
+
+.options {
+    position: absolute;
+    bottom: 55px;
+}
+
+.options__button {
+    font-family: "Quicksand", sans-serif;
+    font-weight: 400;
+    font-size: 13px;
+    color: #9a95c4;
+    text-decoration: none;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #575664;
+}
